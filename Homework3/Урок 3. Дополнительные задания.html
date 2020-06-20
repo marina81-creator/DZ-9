@@ -1,0 +1,155 @@
+﻿<!-- 
+    1. Сделать собственные примеры методов применяемых для массивов.
+
+    2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+
+    3. Создать многомерный массив, размер массива получить от пользователя. Каждый нечётный подмассив заполнить
+     значением 'odd', а чётный - 'even'. Размер каждого вложенного массива - 3.
+
+    4. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей /
+     города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. 
+     Объединить данные из двух массивов и вывести их в одну строку. 
+    
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        // task 1 
+
+        var colors = ["blue", "green", "red", "yellow"];
+        console.log("before");
+        console.log(colors);
+
+        var changedArray = colors.join(", ");
+        console.log("after join")
+        console.log(changedArray);
+
+        var NewArray = changedArray.split("/");
+        console.log("after split");
+        console.log(NewArray);
+        
+        colors = colors.concat("orange", "violet");
+        console.log("after concat");
+        console.log(colors);
+
+        var newcolors = ["black", "gray"];
+        var palette = colors.concat(newcolors);
+        console.log("after concat");
+        console.log(palette);
+
+        
+        colors = colors.reverse();
+        console.log("after reverse");
+        console.log(colors);
+
+
+        var colors = ["blue", "green", "red", "yellow", "orange", "violet"];
+        console.log("before slice");
+        console.log(colors);
+        var gama = colors.slice(1, 3);
+        console.log("after slice");
+        console.log(gama);
+
+        var colors = ["blue", "green", "red", "yellow", "orange", "violet"];
+        console.log("before splice");
+        console.log(colors);
+        var AddArray = colors.splice(1, 2, "gray", "black");
+        console.log("after splice");
+        console.log(AddArray);
+        console.log(colors);
+
+        colors.sort();
+        console.log("after sort");
+        console.log(colors);
+
+        var colors = ["blue", "green", "red", "yellow"];
+        console.log("before push");
+        console.log(colors);
+        var New = colors.push("gray");
+        console.log("after push");
+        console.log(New + "," + colors);
+
+        var colors = ["blue", "green", "red", "yellow"];
+        console.log("before pop");
+        console.log(colors);
+        var Deleted = colors.pop();
+        console.log("after pop");
+        console.log(Deleted);
+
+        var colors = ["blue", "green", "red", "yellow"];
+        console.log("before unshift");
+        console.log(colors);
+        var New = colors.unshift("violet");
+        console.log("after unshift");
+        console.log( New + "/" + colors);
+
+        var colors = ["blue", "green", "red", "yellow"];
+        console.log("before shift");
+        console.log(colors);
+        var New = colors.shift();
+        console.log("after shift");
+        console.log( New );
+        console.log(colors);
+
+    // // task 2
+    // 2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+
+        var colors = ["blue", "green", "red", "yellow"];
+        console.log("Before: " + colors);
+        a = prompt("Enter your color:");
+        colors.splice(a, 0, "gray", "black");
+        console.log("After: " + colors);
+
+    // task 3
+
+    // Создать многомерный массив, размер массива получить от пользователя. Каждый нечётный подмассив заполнить
+    //  значением 'odd', а чётный - 'even'. Размер каждого вложенного массива - 3.
+    
+    
+    var odd = ["odd","odd", "odd" ];
+
+    var even = ["even", "even", "even" ];
+
+    var arrayEvenOdd =[
+        [odd, even]
+    ];
+   
+    var arraySize = +prompt("Enter your size:");
+
+    for (var i=0; i < arraySize; i++) {
+        if (i % 2 == 0) {
+            alert("Odd" + i);
+            arrayEvenOdd[i] = odd
+        }
+        else {
+            alert("Even" + i);
+            arrayEvenOdd[i] = even
+        }
+    }
+
+    for(var i = 0; i <= arrayEvenOdd.length - 1; i++) {
+        alert(arrayEvenOdd[i]);
+    }
+    console.log(arrayEvenOdd);
+
+    // task 4
+    // 4. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей /
+    //  города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. 
+    //  Объединить данные из двух массивов и вывести их в одну строку. 
+
+        var cities = ["Paris", "Kyiv", "Kishinev"];
+        console.log(cities);
+        var population = ["2.148 mln people", "2.884 mln people", "669.7 people"];
+        console.log(population);
+        var info = cities.concat(population);
+        console.log(info);
+        document.write(info);
+
+    </script>
+      
+</head>
+<body>
+</body>
+</html>
