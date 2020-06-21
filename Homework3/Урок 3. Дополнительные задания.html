@@ -93,12 +93,13 @@
         console.log( New );
         console.log(colors);
 
-    // // task 2
-    // 2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+    // // // task 2
+    // // 2. Создать программу, выполняющую вставку элемента в массив после элемента, 
+    // значение которого укажет пользователь.
 
         var colors = ["blue", "green", "red", "yellow"];
         console.log("Before: " + colors);
-        a = prompt("Enter your color:");
+        a = +prompt("Enter your color:");
         colors.splice(a, 0, "gray", "black");
         console.log("After: " + colors);
 
@@ -112,25 +113,24 @@
 
     var even = ["even", "even", "even" ];
 
-    var arrayEvenOdd =[
-        [odd, even]
-    ];
+    var arrayEvenOdd =[];
    
     var arraySize = +prompt("Enter your size:");
 
     for (var i=0; i < arraySize; i++) {
         if (i % 2 == 0) {
-            alert("Odd" + i);
-            arrayEvenOdd[i] = odd
+            arrayEvenOdd[i] = [];
+            for(var e = 0; e < 100; e++){
+                //arrayEvenOdd[i][e] = "odd";
+                arrayEvenOdd[i].push("odd");
+            }            
         }
         else {
-            alert("Even" + i);
-            arrayEvenOdd[i] = even
+            arrayEvenOdd[i] = [];
+            for(var g = 0; g < 100; g++){
+                arrayEvenOdd[i][g] = "even";
+            }
         }
-    }
-
-    for(var i = 0; i <= arrayEvenOdd.length - 1; i++) {
-        alert(arrayEvenOdd[i]);
     }
     console.log(arrayEvenOdd);
 
@@ -144,8 +144,9 @@
         var population = ["2.148 mln people", "2.884 mln people", "669.7 people"];
         console.log(population);
         var info = cities.concat(population);
-        console.log(info);
-        document.write(info);
+        var ChangedArray = info.join("/");
+        console.log(ChangedArray);
+        document.write(ChangedArray);
 
     </script>
       

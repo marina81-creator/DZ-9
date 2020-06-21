@@ -19,81 +19,79 @@
     <script type="text/javascript">
 
     //   Task 1
+    // Среди трех чисел найти среднее арифметическое. Если среди чисел есть равные, вывести сообщение "Ошибка".
+    //  Числа принять от пользователя.
 
-    // var a = 6;
-    // var b = 8;
-    // var c = 7;
-    // var mid = ( a + b + c ) / 3;
+    var a = +prompt("Enter your number:");
+    var b = +prompt("Enter your number:");
+    var c = +prompt("Enter your number:");
 
-    // if ((a == b) && (b == c)) {
-    //     alert ("Eror");
-    // }
-    // else if (a == b) {
-    //     alert ("Eror");
-    // }
-    // else if (b == c) {
-    //     alert ("Eror");
-    // }
-    // else if (a == c) {
-    //     alert ("Eror");
-    // }
-    // else {
-    //     console.log ((a + b + c) / 3);
-    // }
 
+    var middle = ( a + b + c ) / 3;
+
+    if ((a == b) || (b == c) || (a == c)) {
+        alert ("Eror");
+    }
+    else {
+        console.log (middle);
+    }  
 
     // task 2
-//     var a = 10;
-//     for(var i = 0; i < a; i ++){
-//         for(var j = 0; j < a; j ++)
-//         document.write(i > j || j >= a - i ? "":"*");
-//         document.write("<br>");
-// }
+    // Построить прямоугольный треугольник состоящий из символа "*".
 
-// task 3
+    var a = 10;
+    for(var i = 0; i < a; i ++){
+        for(var j = 0; j < a; j ++)
+        document.write(i > j || j >= a - i ? "":"*");
+        document.write("<br>");
+}
 
-// var A = +prompt ('Введите первое число', '');
-// var B = +prompt ('Введите второе число', '');
-// var C = +prompt ('Введите третье число', '');
- 
-// var Max = A;
-// if (B > Max) Max = B;
-// if (C > Max) Max = C; {
-// document.write ('<p>из трёх введённых чисел: <b>' + A + '</b>, <b>' + B + '</b> и <b>' + C + '</b>');
-// document.write ('<p>максимальным является число <b>' + Max + '</b>');
-// }
+    // task 3
+    // Определить какое из трех, введенных пользователем, чисел максимальное и вывести его на экран.
 
-// task 4
+    var A = +prompt ('Введите первое число', '');
+    var B = +prompt ('Введите второе число', '');
+    var C = +prompt ('Введите третье число', '');
+    
+    var Max = A;
+    if (B > Max) Max = B;
+    if (C > Max) Max = C; {
+    document.write ('<p>из трёх введённых чисел: <b>' + A + '</b>, <b>' + B + '</b> и <b>' + C + '</b>');
+    document.write ('<p>максимальным является число <b>' + Max + '</b>');
+    }
 
-// var a = +prompt ("Введите меньшее число", "0");
-//         var b = +prompt("Введите большее число", "0");
-       
-//         if (a < b) {
-//             var c = 0;
-//             for (var i = a; i <= b; i++) {
-//                 c += i;
-//             }
-           
-//         }
-//         else {
-//             document.write("Вы ввели неправильные числа. Первое число должно быть меньше");
-//         };
+    // task 4
 
-//         document.write("Сумма чисел в промежутке:" + " " + c);
+    // Дано два числа A и B где (A<B). 
+    //     Выведите на экран суму всех чисел расположенных в числовом промежутке от А до В. 
+    //     Выведите на экран все нечетные значения, расположенные в числовом промежутке от А до В.   
 
         var a = +prompt ("Введите меньшее число", "0");
         var b = +prompt("Введите большее число", "0");
        
-        
+        if (a < b) {
+            var c = 0;
+            for (var i = a; i <= b; i++) {
+                c += i;
+            }   
+        }
+        else {
+            document.write("Вы ввели неправильные числа. Первое число должно быть меньше");
+        };
+
+        document.write("Сумма чисел в промежутке:" + " " + c);
+
+        var a = +prompt ("Введите меньшее число", "0");
+        var b = +prompt("Введите большее число", "0");
+
+
             for (var j = a; j <= b; j++) {
                 if (j % 2 == 0) {
-                    document.write("<br/>");
-                    
-                }
-                else {
+                    document.write("<br/>");  
+                } else {
                     document.write("Нечетные числа в промежутке:" + " " + j + "<br/>");
                 }
-                }
+            }
     </script>
 </head>
 <body>
