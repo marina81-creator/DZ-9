@@ -1,20 +1,4 @@
-﻿<!--  {}
-    1. Создать функцию calculate(operand1, operand2, sign), где operand1 и operand2 — два числа, sign — знак арифметической операции.
-       Функция должна расчитывать результат операции, исходя из переданного ей знака. 
-       Функция должна проверять корректность введенных чисел и знака операции.
-       Все аргументы для функции принять от пользователя.
-
-    2. Создать функцию, возводящую число в степень, число и сама степень вводится пользователем
-    
-    3.  Создать игру "Камень-Ножницы-Бумага".
-        Выбор компьютера определяется строкой:  
-        "var computerChoice = Math.random();
-        alert(computerChoice);".
-        Math.random() выдает произвольное число в промежутке от 0 до 1, на основании этого можно построить принцип выбора решения компьютера.
-
-    4. Напишите функцию, которая возвращает n-е число Фибоначчи. Для решения используйте цикл.
-
--->
+﻿
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,9 +7,9 @@
 
 // 1. Создать функцию calculate(operand1, operand2, sign), где operand1 и operand2 — два числа, sign —
 //  знак арифметической операции.
-//        Функция должна расчитывать результат операции, исходя из переданного ей знака. 
-//        Функция должна проверять корректность введенных чисел и знака операции.
-//        Все аргументы для функции принять от пользователя.
+//  Функция должна расчитывать результат операции, исходя из переданного ей знака. 
+//  Функция должна проверять корректность введенных чисел и знака операции.
+//  Все аргументы для функции принять от пользователя.
 
     
 
@@ -34,10 +18,8 @@
         var sign = prompt("Enter sign:");
 
         function calculate(operand1, operand2, sign) {
-            // var listSign = ['+', '-', '*', '/']
             var result = operand1 + operand2;
             document.write('Sum result' + result);
-            // var result;
             var result = operand1 * operand2;
             document.write('Multiply result' + result);
         
@@ -58,28 +40,104 @@
         
         result = calculate(operand1, operand2, sign);
         if (result != undefined) {
-            alert(result);
+            console.log(result);
+        }
+    
+        // 2. Создать функцию, возводящую число в степень, число и сама степень вводится пользователем
+
+        function pow(x, n) {
+            var result = x;
+
+            for (var i = 1; i < n; i++) {
+                result *= x;
+            }
+
+            return result;
+            }
+
+            var x = prompt("x?", '');
+            var n = prompt("n?", '');
+
+            if (n < 1) {
+            console.log(`Степень ${n} не поддерживается, используйте натуральное число`);
+            } else {
+            console.log( pow(x, n) );
+            }
+
+
+        // 3.  Создать игру "Камень-Ножницы-Бумага".
+        // Выбор компьютера определяется строкой:  
+        // "var computerChoice = Math.random();
+        // alert(computerChoice);".
+        // Math.random() выдает произвольное число в промежутке от 0 до 1, на основании этого можно построить принцип выбора решения компьютера.
+       
+        var userChoice = prompt("Do you choose rock, paper or scissors?");
+        var computerChoice = Math.random();
+
+            if (computerChoice < 0.34) {
+            computerChoice = "rock";
+            } 
+            else if(computerChoice <= 0.67) {
+            computerChoice = "paper";
+            } 
+            else {
+            computerChoice = "scissors";
+            } 
+            console.log("Computer " + computerChoice);
+
+        var choice1 = userChoice;
+        var choice2 = computerChoice;
+    
+        var compare = function (choice1, choice2) {
+            if (choice1 === choice2) {
+                return "The result is a tie!";
+            }
+            else if(choice1 === "rock") {
+                if(choice2 === "scissors") {
+                    return "rock wins";
+                }
+                else {
+                    return "paper wins";
+                }
+            }
+            else if(choice1 === "paper") {
+                if(choice2 === "rock") {
+                    return "paper wins";
+                }
+                else {
+                    return "scissors wins";
+                }
+            }
+            else if(choice1 === "scissors") {
+                if(choice2 === "paper") {
+                    return "scissors wins";
+                }
+                else {
+                    return "rock wins";
+                }
+            }
+        }
+    console.log(compare(choice1, choice2));
+
+
+//   4. Напишите функцию, которая возвращает n-е число Фибоначчи. Для решения используйте цикл.
+
+        function fib(n) {
+            var a = 1;
+            var b = 1;
+        for (var i = 3; i <= n; i++) {
+            var c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
         }
 
-        // function calculate(operand1, operand2, sign) {
-        //     // var listSign = ['+', '-', '*', '/']
-        //     var result = operand1 * operand2;
-        //     document.write('Multiply result' + result);
-        // }
-        // function fibonacci(num){
-        //     var a = 1, b = 0, temp;
+        console.log( fib(3) ); // 2
+        console.log( fib(7) ); // 13
+        console.log( fib(77) ); // 5527939700884757
 
-        //     while (num >= 0){
-        //         temp = a;
-        //         a = a + b;
-        //         b = temp;
-        //         num--;
-        //     }
 
-        //     return b;
-        // }
-
-        // console.log(fibonacci(3));
     </script>
 </head>
 <body>
